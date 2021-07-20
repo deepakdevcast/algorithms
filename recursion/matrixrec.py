@@ -1,4 +1,4 @@
-#find all path to reached specific position
+#find all path to reached specific position (only going right and down)
 #r,d is starting position
 #fr,fd is finding position
 def pathfinder(matrix,fr,fd,r=0,d=0,path=""):
