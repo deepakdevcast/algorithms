@@ -24,11 +24,7 @@ def nQueen(matrix,c,hashrow,hashdiag,hashdiagU):
 
 #we need to check only three diagonal becuause we start filling queen left to right
 def issafe(row,col,matrix,hashrow,hashdiag,hashdiagU):
-    if hashdiag[row+col]==1: return False
-    #second direction: column or left
-    if hashrow[row]==1: return False
-    #third direction: lower-left diagonal
-    if hashdiagU[len(matrix)-1 + col -row]==1: return False
+    if hashdiag[row+col]==1 or hashrow[row]==1 or hashdiagU[len(matrix)-1 + col -row]==1: return False
     return True
 
 n=4
