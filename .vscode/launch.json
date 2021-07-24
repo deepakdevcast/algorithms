@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch practice",
+            "request": "launch",
+            "mainClass": "practice",
+            "projectName": "algorithm with python_332e5170"
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
