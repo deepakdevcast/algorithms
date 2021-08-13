@@ -11,15 +11,22 @@ int findmajority(int arr[],int length){
         else if(maj==arr[i]) {vote++;}
         if(vote==0) {maj=arr[i];vote=1;}
     }
-    if(vote==0){
-        return -1;
+    int count=0;
+    for(int i=0;i<length;i++){
+        if(arr[i]==maj){
+            count++;
+        }
     }
-    return maj;
+
+    if(count>length/2){
+        return maj;
+    }
+    return -1;
 }
 int main() {
     
-    int arr[]={5,2,2,6,2,5,2,2,8,2};
-	int majority = findmajority(arr,10);
-    cout<<"majority candidate"<<majority;
+    int arr[]={1,2,2,1};
+	int majority = findmajority(arr,5);
+    cout<<"majority candidate: "<<majority;
 	return 0;
 }
