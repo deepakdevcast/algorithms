@@ -7,23 +7,32 @@ bool checkAnagram(string s1,string s2){
     if(s1.size()!=s2.size()){
         return false;
     }
-    vector<int> hashs1(25,0);
-    vector<int> hashs2(25,0);
+    // uning map
+    map<char,int> hash; 
     for(int i=0;i<s1.size();i++){
-        hashs1[s1[i]-97] +=1;
-        hashs2[s2[i]-97] +=1; 
+        hash[s1[i]] +=1;
+        hash[s2[i]] -=1; 
     }
-    for(int i=0;i<hashs1.size();i++){
-        if(hashs1[i]!=hashs2[i]){
-            return false;
-        }
+    for(auto letter:hash){
+        if(letter.second!=0) return false;
     }
+    // using vector
+    // vector<int> hash(25,0);
+    // for(int i=0;i<s1.size();i++){
+    //     hash[s1[i]-97] +=1;
+    //     hash[s2[i]-97] -=1; 
+    // }
+    // for(int i=0;i<hash.size();i++){
+    //     if(hash[i]!=0){
+    //         return false;
+    //     }
+    // }
     return true;
 }
 int main() {
     
     string s1 = "apple";
-    string s2 = "paple";
+    string s2 = "aaple";
 	cout<<checkAnagram(s1,s2);
 	return 0;
 }
