@@ -11,7 +11,9 @@ int findmajority(int arr[],int length){
         else if(maj==arr[i]) {vote++;}
         if(vote==0) {maj=arr[i];vote=1;}
     }
-
+    if(vote==0){
+        return -1;
+    }
     return maj;
 }
 int main() {
